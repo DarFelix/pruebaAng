@@ -1,48 +1,23 @@
 
-<div class="container">
 
-  <form>
 
-  <div class="row">
-    <div class="col">
-      <h4>Nombre</h4>
-      <input type="text" name="nombr" [(ngModel)]="cuadroNombre">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Apellido</h4>
-      <input type="text" name="apellid" [(ngModel)]="cuadroApellido">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Cargo</h4>
-      <input type="text" name="carg" [(ngModel)]="cuadroCargo">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h4>Salario</h4>
-      <input type="number" name="salari" [(ngModel)]="cuadroSalario">
-    </div>
-  </div>
-  <br>
-  <div class="row">
-    <div class="col">
-      <button type="submit" (click)="agregar()">Registrar</button>
-    </div>
-  </div>
-  <br>
-
-</form>
-
-  <div class="row">
-    <div class = "col">
-      <div *ngFor="let empleado of empleados; let i = index">
-
-        {{i+1}} : {{empleado.nombre}} {{empleado.apellido}} {{empleado.cargo}} {{empleado.salario}} 
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" href="">Home</a>
+          <a class="nav-link" href="/proyectos">Proyectos</a>
+          <a class="nav-link" href="/quienes">Quienes somos</a>
+          <a class="nav-link" href="/contacto">Contacto</a>
+          <a class="nav-link" routerLink="/login" style="margin-left:700px" *ngIf="!estaLogueado()">Login</a>
+          <a class="nav-link" style="margin-left:700px" (click)="logout()" *ngIf="estaLogueado()" >Logout</a>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </nav>
+
+  <router-outlet></router-outlet>

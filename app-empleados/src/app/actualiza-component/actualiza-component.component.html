@@ -1,0 +1,45 @@
+<p>actualiza-component works!</p>
+
+<div class="container">
+
+    <h3>Formulario</h3>
+  
+    <form>
+  
+    <div class="row">
+      <div class="col">
+        <h4>Nombre</h4>
+        <input type="text" name="nombr" [(ngModel)]="cuadroNombre">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4>Apellido</h4>
+        <input type="text" name="apellid" [(ngModel)]="cuadroApellido">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4>Cargo</h4>
+        <input type="text" name="carg" [(ngModel)]="cuadroCargo">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h4>Salario</h4>
+        <input type="number" name="salari" [(ngModel)]="cuadroSalario">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" type="submit" (click)="actualizaEmpleado()">Acción</button>
+      </div>
+    </div>
+   
+    
+  
+  </form>
+  
+
+  </div>

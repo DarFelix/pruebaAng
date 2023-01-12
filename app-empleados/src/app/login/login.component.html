@@ -1,0 +1,33 @@
+<div class="container">
+
+    <form #miFormulario="ngForm" (ngSubmit)="login(miFormulario)">
+
+        <h1>Login de usuario</h1>
+
+        <br>
+
+        <div class="row">
+            <div class="col"> 
+                <input type="email" name="email" placeholder="Correo" ngModel>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col"> 
+                <input type="password" name="password" placeholder="Contraseña" ngModel>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="col"> 
+                <button type="submit" class="btn btn-success">Ingresar</button>
+            </div>
+        </div>
+        
+
+    </form>
+</div>

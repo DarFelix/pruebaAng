@@ -1,30 +1,29 @@
-import { Component } from '@angular/core';
-import { Empleado } from './empleado.model';
+import { Component, OnInit } from '@angular/core';
+import firebase from 'firebase/compat/app'
+import { LoginService } from './login/login.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'Listado de empleados';
+export class AppComponent implements OnInit{
 
-  empleados:Empleado[]=[
-  new Empleado("Juan", "Diaz", "Presidente", 7500),
-  new Empleado("Luna", "Florez", "Directora", 2999),
-  new Empleado("Ana", "Ruiz", "Jefe", 2000)
-  ];
+  constructor(private loginService:LoginService){}
 
-  cuadroNombre:string="";
-  cuadroApellido:string="";
-  cuadroCargo:string="";
-  cuadroSalario:number=0;
-
-  agregar(){
-    let emp = new Empleado(this.cuadroNombre, this.cuadroApellido, this.cuadroCargo, this.cuadroSalario);
-    this.empleados.push(emp);
+  ngOnInit(): void {
+    firebase.initializeApp({
+      apiKey: "AIzaSyCfD0mXZEBG6fUL-pfLjz51wNqnfVeAmtM",
+      authDomain: "pruebainicial-82280.firebaseapp.com",
+    });
   }
 
-  
+  estaLogueado(){
+    return this.loginService.estaLogueado();
+  }
+
+  logout(){
+    return this.loginService.logout();
+  }
 
 }
